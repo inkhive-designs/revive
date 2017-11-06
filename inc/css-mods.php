@@ -73,7 +73,58 @@ function revive_custom_css_mods() {
 		echo "#masthead #site-logo img { transform: scale(".$val."); -webkit-transform: scale(".$val."); -moz-transform: scale(".$val."); -ms-transform: scale(".$val."); }";
 		endif;
 
-	echo "</style>";
+    // page & post fontsize
+    if(get_theme_mod('revive_content_page_post_fontsize_set')):
+        $pp_size_val = get_theme_mod('revive_content_page_post_fontsize_set');
+        if($pp_size_val=='small'):
+            echo "#primary-mono .entry-content{ font-size:16px;}";
+        elseif ($pp_size_val=='medium'):
+            echo "#primary-mono .entry-content{ font-size:20px;}";
+        elseif ($pp_size_val=='large'):
+            echo "#primary-mono .entry-content{ font-size:22px;}";
+        elseif ($pp_size_val=='extra-large'):
+            echo "#primary-mono .entry-content{ font-size:24px;}";
+        elseif ($pp_size_val=='default'):
+            echo "#primary-mono .entry-content{ font-size:18px;}";
+        endif;
+    endif;
+
+    //site title font size
+    //var_dump(get_theme_mod('revive_content_site_fontsize_set'));
+    if(get_theme_mod('revive_content_site_title_fontsize_set')):
+        $site_title_size_val=get_theme_mod('revive_content_site_title_fontsize_set');
+        if($site_title_size_val != 'default'):
+            echo "#masthead h1.site-title {font-size:".$site_title_size_val."px !important;}";
+        else:
+            echo "#masthead h1.site-title {font-size:42"."px;}";
+        endif;
+    endif;
+
+    //site desc font size
+    //var_dump(get_theme_mod('revive_content_site_desc_fontsize_set'));
+    if(get_theme_mod('revive_content_site_desc_fontsize_set')):
+        $site_desc_size_val=get_theme_mod('revive_content_site_desc_fontsize_set');
+        if($site_desc_size_val != 'default'):
+            echo "#masthead h2.site-description {font-size:".$site_desc_size_val."px !important;}";
+        else:
+            echo "#masthead h2.site-description {font-size:18"."px;}";
+        endif;
+    endif;
+
+//contact us page
+    if(!is_home()):
+        if( get_theme_mod('revive_contact_page_title', true)):
+            echo "#primary-mono .contact-us .entry-header { display:none; }";
+        endif;
+    endif;
+
+    if (!is_home() && is_front_page()) :
+        if ( get_theme_mod('revive_content_font_size') ) :
+            $size = (get_theme_mod('revive_content_font_size'));
+            echo "#primary-mono .entry-content { font-size:".$size.";}";
+        endif;
+    endif;
+    echo "</style>";
 }
 
 add_action('wp_head', 'revive_custom_css_mods');

@@ -2,10 +2,11 @@
 <div class="container">
 <?php if ( get_theme_mod('revive_box_enable') && is_front_page() ) : ?>
 	<div class="popular-articles col-md-12">
+        <?php if(get_theme_mod('revive_box_title')):?>
 		<div class="section-title">
-			<?php echo get_theme_mod('revive_box_title',__('Popular Articles','revive')); ?>
+			<?php echo esc_html(get_theme_mod('revive_box_title',__('Popular Articles','revive'))); ?>
 		</div>	
-		
+		<?php endif; ?>
 		<?php /* Start the Loop */ $count=0; ?>
 				<?php
 		    		$args = array( 'ignore_sticky_posts' => true, 'posts_per_page' => 4, 'category' => get_theme_mod('revive_box_cat') );
@@ -18,7 +19,7 @@
 				        <?php if (has_post_thumbnail()) : ?>	
 								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_post_thumbnail('revive-poster-thumb'); ?></a>
 						<?php else : ?>
-								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>"></a>
+								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/fa1.jpg"; ?>"></a>
 						<?php endif; ?>
 							<div class="titledesc">
 				            <h2><a href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h2>

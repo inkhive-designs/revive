@@ -29,6 +29,8 @@ jQuery('#site-navigation ul.menu').slicknav({
 	
 */
 
+
+
 jQuery(document).ready( function() { 
 	jQuery('#top-menu ul.menu').mobileMenu({
 		switchWidth: 767
@@ -53,3 +55,25 @@ jQuery(window).load(function() {
 	        nextText: "<i class='fa fa-chevron-circle-right'></i>",
         });
     });
+
+
+
+
+
+//sticky social menu bar
+jQuery( document ).scroll(function() {
+        if (jQuery('#social-icons').visible()) {
+        jQuery('#social-icons-sticky').css("display", "none");
+    }
+    	else{
+            jQuery('#social-icons-sticky').css("display", "block");
+		}
+});
+
+//sticky sidebar
+jQuery(window).load(function() {
+    jQuery('.sticky-sidebar').scrollToFixed({
+        marginTop: 30,
+        limit: jQuery('#primary').offset().top + jQuery('#primary').height() - jQuery('.sticky-sidebar').height(),
+    });
+});

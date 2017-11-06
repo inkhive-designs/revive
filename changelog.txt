@@ -60,4 +60,17 @@ Version 1.0.0.5
 	
 Version 1.0.0.6
 
-	i) Fixed Bugs, when sticky posts were enabled. Featured posts go into next line no more		
+	i) Fixed Bugs, when sticky posts were enabled. Featured posts go into next line no more
+
+Version 1.0.0.7
+    i) Framework updated.
+    ii) Typography option added for site title and description as well as page/post content.
+    iii) 4 new skins added for better designing purpose.
+    iv) Contact Us Page template added.
+    v) Full width page  template added.
+    vi) Social icons styles added and added sticky option also.
+    vii) Bug fixed related to featured area sections and menus.
+    viii) Footer menu Bug Fixed.
+    ix) Footer menu on mobile screen bug fixed.
+    x) Sticky sidebar added.
+

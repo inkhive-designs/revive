@@ -2,10 +2,11 @@
 <div class="container">
 <?php if ( get_theme_mod('revive_fa2_enable') && is_front_page() ) : ?>
 	<div class="col-md-12">
+        <?php if(get_theme_mod('revive_fa2_title')):?>
 		<div class="section-title">
-			<?php echo get_theme_mod('revive_fa2_title',__('Popular Articles','revive')); ?>
+			<?php echo esc_html(get_theme_mod('revive_fa2_title',__('Popular Articles','revive'))); ?>
 		</div>	
-		
+		<?php endif;?>
 		<?php /* Start the Loop */ $count=0; ?>
 				<?php
 		    		$args = array( 'ignore_sticky_posts' => true, 'posts_per_page' => 3, 'category' => get_theme_mod('revive_fa2_cat') );

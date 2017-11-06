@@ -1,0 +1,12 @@
+@import '../variables';
+@import '../functions';
+
+@accent: #e48d48;
+
+@import '../_init';
+#site-navigation ul ul li:nth-child(2n){
+  background: #cccccc;
+  &:hover{
+    background: lighten(@accent,20%) !important;
+  }
+}
