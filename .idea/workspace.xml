@@ -2,83 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ec18a36-68d2-499d-93e5-f275e9571d1f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/blog-layouts/_init_blog_layouts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/blog-layouts/grid-layouts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/blog-layouts/revive-layout.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/featured-components/_init_featured.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/featured-components/featured-area1.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/featured-components/featured-area2.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/featured-components/page_contactus.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/featured-components/slider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/404.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/_init_sections.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/comments.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/footer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/header.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/jumbosearch.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/navigation.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/sidebar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/single.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/social-icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/sections/universal.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/skins/default.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/skins/green.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/skins/orange.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/skins/purple.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/skins/rosy.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/theme-styles/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/admin_modules/admin_styles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/admin_modules/register_styles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/admin_modules/register_widgets.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/admin_modules/theme_setup.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/_googlefonts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/_header.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/_layouts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/_page-layouts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/_sanitization.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/_skins.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/featured-areas.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/init.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/misc_scripts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/slider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/customizer/social-icons.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/content/content-contact_page.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/header/head.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/header/jumbosearch.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/header/masthead.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/header/top-bar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/page-fullwidth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/template-page-contactus.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/less/main.less" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/less/admin.less" afterPath="$PROJECT_DIR$/assets/theme-styles/admin-styles/admin.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/less/functions.less" afterPath="$PROJECT_DIR$/assets/theme-styles/functions.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/less/variables.less" afterPath="$PROJECT_DIR$/assets/theme-styles/_init.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/content-none.php" afterPath="$PROJECT_DIR$/modules/content/content-none.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/content-page.php" afterPath="$PROJECT_DIR$/modules/content/content-page.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/content-search.php" afterPath="$PROJECT_DIR$/modules/content/content-search.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/content-single.php" afterPath="$PROJECT_DIR$/modules/content/content-single.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/content.php" afterPath="$PROJECT_DIR$/modules/content/content.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/featured-area1.php" afterPath="$PROJECT_DIR$/framework/featured-components/featured-area1.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/featured-area2.php" afterPath="$PROJECT_DIR$/framework/featured-components/featured-area2.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/social-fa.php" afterPath="$PROJECT_DIR$/modules/social/social-fa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archive.php" afterPath="$PROJECT_DIR$/archive.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/changelog.txt" afterPath="$PROJECT_DIR$/changelog.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/theme-functions.php" afterPath="$PROJECT_DIR$/framework/theme-functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/css-mods.php" afterPath="$PROJECT_DIR$/inc/css-mods.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/customizer.php" afterPath="$PROJECT_DIR$/inc/customizer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/template-tags.php" afterPath="$PROJECT_DIR$/inc/template-tags.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/custom.js" afterPath="$PROJECT_DIR$/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/external.js" afterPath="$PROJECT_DIR$/js/external.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page.php" afterPath="$PROJECT_DIR$/page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.php" afterPath="$PROJECT_DIR$/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sidebar.php" afterPath="$PROJECT_DIR$/sidebar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/single.php" afterPath="$PROJECT_DIR$/single.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/screenshot.jpg" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -355,12 +279,12 @@
       <workItem from="1509702546651" duration="184000" />
       <workItem from="1509702912936" duration="78000" />
       <workItem from="1509705072462" duration="6935000" />
-      <workItem from="1509943930033" duration="12157000" />
+      <workItem from="1509943930033" duration="12816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68425000" />
+    <option name="totallyTimeSpent" value="69084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
