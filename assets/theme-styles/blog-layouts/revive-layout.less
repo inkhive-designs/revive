@@ -64,27 +64,18 @@
       }
     }
   }
-  /*
-&:nth-child(even) {
-      .out-thumb {
-          h1 a {
-              background: @accent;
-              color: white;
-              font-weight: normal;
-          }
-      }
-  }
-*/
-  &:hover {
-    img {
-      -webkit-filter: brightness(0.5) blur(1px);
-      filter: brightness(0.5) blur(1px);
-      transform: scale(1.15);
-    }
-    .out-thumb {
-      right: 0;
-      opacity: 1;
-    }
-  }
+  @media screen and (min-width: 767px) {
 
+    &:hover {
+      img {
+        -webkit-filter: brightness(0.5) blur(1px);
+        filter: brightness(0.5) blur(1px);
+        transform: scale(1.15);
+      }
+      .out-thumb {
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
 }

@@ -64,6 +64,9 @@
     position: relative;
     bottom: 60px;
     z-index: 9;
+    @media screen and (max-width: 767px) {
+      bottom: 0px;
+    }
   }
   .nivo-caption {
     bottom: 60px;
@@ -81,6 +84,9 @@
     .slide-title {
       display: inline-block;
       font-size: 24px;
+      @media screen and (max-width: 1200px){
+        font-size: 16px;
+      }
       padding: 10px;
       background: fade(black, 70%);
       border-left: solid 4px @accent;

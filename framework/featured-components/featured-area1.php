@@ -17,9 +17,9 @@
 				    <div class="col-md-3 col-sm-6 col-xs-6 imgcontainer">
 				    	<div class="popimage">
 				        <?php if (has_post_thumbnail()) : ?>	
-								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_post_thumbnail('revive-poster-thumb'); ?></a>
+								<a href="<?php the_permalink() ?>" alt="<?php  the_title() ?>" title="<?php the_title() ?>"><?php the_post_thumbnail('revive-poster-thumb',array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
 						<?php else : ?>
-								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/fa1.jpg"; ?>"></a>
+								<a href="<?php the_permalink() ?>" alt="<?php  the_title() ?>" title="<?php the_title() ?>"><img alt= "<?php the_title() ?>" src="<?php echo esc_url(get_template_directory_uri())."/assets/images/fa1.jpg"; ?>"></a>
 						<?php endif; ?>
 							<div class="titledesc">
 				            <h2><a href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h2>

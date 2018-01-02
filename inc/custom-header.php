@@ -57,7 +57,7 @@ function revive_header_style() {
 			background-image: url(<?php header_image(); ?>);
 			background-size: <?php echo esc_html(get_theme_mod('revive_himg_style','cover')); ?>;
 			background-position-x: <?php echo esc_html(get_theme_mod('revive_himg_align','center')); ?>;
-			background-repeat: <?php echo get_theme_mod('revive_himg_repeat') ? "repeat" : "no-repeat" ?>;
+			background-repeat: <?php echo esc_html(get_theme_mod('revive_himg_repeat')) ? "repeat" : "no-repeat" ?>;
 		}
 	</style>	
 	<?php
@@ -102,10 +102,10 @@ function revive_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<h1 class="displaying-header-text"><a id="name"<?php echo esc_html($style); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="displaying-header-text" id="desc"<?php echo esc_html($style); ?>><?php bloginfo( 'description' ); ?></div>
 		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
+		<img src="<?php header_image(); ?>" alt="<?php the_title() ?>">
 		<?php endif; ?>
 	</div>
 <?php

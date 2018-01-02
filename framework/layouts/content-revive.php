@@ -13,12 +13,12 @@
 						  $image_width = 270;
 				endif; ?>
 
-<article id="post-<?php the_ID(); ?>" data-w="<?php echo $image_width ?>" data-h="<?php echo $image_height; ?>" <?php post_class('revive item'); ?>>
+<article id="post-<?php the_ID(); ?>" data-w="<?php echo esc_html($image_width) ?>" data-h="<?php echo esc_html($image_height); ?>" <?php post_class('revive item'); ?>>
 
 			<?php if (has_post_thumbnail()) : ?>	
-				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('full'); ?></a>
+				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('full',array(  'alt' => get_the_title(),'title' => get_the_title() )); ?></a>
 			<?php else: ?>
-				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>"></a>
+				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img alt="<?php the_title() ?>" src="<?php echo esc_url(get_template_directory_uri()."/assets/images/placeholder2.jpg"); ?>"></a>
 			<?php endif; ?>
 			
 			<div class="postdate">

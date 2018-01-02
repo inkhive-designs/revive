@@ -16,7 +16,7 @@ get_header(); ?>
 	<div id="primary" class="content-areas <?php do_action('revive_primary-width') ?>">
 		<main id="main" class="site-main" role="main">
 		<div class="section-title">
-			<?php _e('Recent Posts','revive'); ?>
+			<?php esc_html_e('Recent Posts','revive'); ?>
 		</div>	
 		<?php if ( have_posts() ) : ?>
 

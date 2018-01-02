@@ -60,7 +60,7 @@ function revive_custom_css_mods() {
 	endif;
 	
 	if ( get_theme_mod('revive_custom_css') ) :
-		echo  strip_tags(get_theme_mod('revive_custom_css'));
+		echo  esc_html(strip_tags(get_theme_mod('revive_custom_css')));
 	endif;
 	
 	
@@ -70,7 +70,7 @@ function revive_custom_css_mods() {
 	
 	if ( get_theme_mod('revive_logo_resize') ) :
 		$val = esc_html(get_theme_mod('revive_logo_resize')/100);
-		echo "#masthead #site-logo img { transform: scale(".$val."); -webkit-transform: scale(".$val."); -moz-transform: scale(".$val."); -ms-transform: scale(".$val."); }";
+		echo "#masthead #site-logo img { transform: scale(".esc_html($val)."); -webkit-transform: scale(".esc_html($val)."); -moz-transform: scale(".esc_html($val)."); -ms-transform: scale(".esc_html($val)."); }";
 		endif;
 
     // page & post fontsize
@@ -94,7 +94,7 @@ function revive_custom_css_mods() {
     if(get_theme_mod('revive_content_site_title_fontsize_set')):
         $site_title_size_val=get_theme_mod('revive_content_site_title_fontsize_set');
         if($site_title_size_val != 'default'):
-            echo "#masthead h1.site-title {font-size:".$site_title_size_val."px !important;}";
+            echo "#masthead h1.site-title {font-size:".esc_html($site_title_size_val)."px !important;}";
         else:
             echo "#masthead h1.site-title {font-size:42"."px;}";
         endif;
@@ -105,7 +105,7 @@ function revive_custom_css_mods() {
     if(get_theme_mod('revive_content_site_desc_fontsize_set')):
         $site_desc_size_val=get_theme_mod('revive_content_site_desc_fontsize_set');
         if($site_desc_size_val != 'default'):
-            echo "#masthead h2.site-description {font-size:".$site_desc_size_val."px !important;}";
+            echo "#masthead h2.site-description {font-size:".esc_html($site_desc_size_val)."px !important;}";
         else:
             echo "#masthead h2.site-description {font-size:18"."px;}";
         endif;
@@ -121,7 +121,7 @@ function revive_custom_css_mods() {
     if (!is_home() && is_front_page()) :
         if ( get_theme_mod('revive_content_font_size') ) :
             $size = (get_theme_mod('revive_content_font_size'));
-            echo "#primary-mono .entry-content { font-size:".$size.";}";
+            echo "#primary-mono .entry-content { font-size:".esc_html($size).";}";
         endif;
     endif;
     echo "</style>";

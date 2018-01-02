@@ -24,9 +24,9 @@
 				    
 				    	<div class="popimage">
 				        <?php if (has_post_thumbnail()) : ?>	
-								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_post_thumbnail( $thumb ); ?></a>
+								<a href="<?php the_permalink() ?>" alt="<?php  the_title() ?>" title="<?php the_title() ?>"><?php the_post_thumbnail( $thumb,array(  'alt' => trim(strip_tags( $post->post_title ))) ); ?></a>
 						<?php else : ?>
-								<a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>"></a>
+								<a href="<?php the_permalink() ?>" alt="<?php  the_title() ?>" title="<?php the_title() ?>"><img alt= "<?php the_title() ?>" src="<?php echo esc_url(get_template_directory_uri()."/assets/images/placeholder2.jpg"); ?>"></a>
 						<?php endif; ?>
 							<div class="titledesc">
 					            <h2><a href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h2>

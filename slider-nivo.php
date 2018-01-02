@@ -21,7 +21,7 @@ if ( get_theme_mod('revive_main_slider_enable' ) && is_front_page() ) :
 						
 						?>
 						
-			            <a href="<?php echo $url; ?>"><img src="<?php echo $img ?>" title="#caption_<?php echo $i ?>" /></a>
+			            <a href="<?php echo esc_html($url); ?>"><img src="<?php echo $img ?>" title="#caption_<?php echo esc_html($i) ?>" /></a>
 			            
 		             <?php endfor; ?>
 		               
@@ -37,11 +37,11 @@ if ( get_theme_mod('revive_main_slider_enable' ) && is_front_page() ) :
 						
 						
 						?>
-			            <div id="caption_<?php echo $i ?>" class="nivo-html-caption">
-			                <a href="<?php echo $url ?>">
-				                <div class="slide-title"><?php echo $title ?></div>
-				                <div class="slide-desc"><span><?php echo $desc ?></span></div>
-				                <?php if ($button != "") { ?><div class="slide-cta"><span><?php echo $button ?></span></div><?php } ?>
+			            <div id="caption_<?php echo esc_html($i) ?>" class="nivo-html-caption">
+			                <a href="<?php echo esc_html($url) ?>">
+				                <div class="slide-title"><?php echo esc_html($title) ?></div>
+				                <div class="slide-desc"><span><?php echo esc_html($desc) ?></span></div>
+				                <?php if ($button != "") { ?><div class="slide-cta"><span><?php echo esc_html($button) ?></span></div><?php } ?>
 			                </a>
 			            </div>
 		            <?php endfor; ?>

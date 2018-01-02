@@ -60,12 +60,12 @@
                                 <?php the_title(); ?>
                             </h3>
                             <div class="excerpt">
-                                <?php echo substr(get_the_content(), 0, 300)."..."; ?>
+                                <?php echo esc_html(substr(get_the_content(), 0, 300)."..."); ?>
                             </div>
 
                             <?php if(get_theme_mod('revive_static_button') != ''): ?>
                                 <a href="<?php the_permalink(); ?>" class="more-button">
-                                    <?php echo get_theme_mod('revive_static_button'); ?>
+                                    <?php echo esc_html(get_theme_mod('revive_static_button')); ?>
                                 </a>
                             <?php endif;?>
                         </div>
@@ -87,7 +87,7 @@
     <div class="site-loc col-md-12 cl-sm-12">
         <?php if(get_theme_mod('revive_map_set') != ''): ?>
             <div class="map-img col-md-6 col-sm-6">
-                <a href="<?php the_permalink(); ?>"><img src="<?php echo get_theme_mod('revive_map_set'); ?> " /></a>
+                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_html(get_theme_mod('revive_map_set')); ?> " /></a>
             </div>
         <?php endif; ?>
 
@@ -98,7 +98,7 @@
                 <?php get_template_part('modules/social/social', 'fa'); ?>
             </div>
             <div class="button">
-                <a href="<?php get_theme_mod('revive_button_url'); ?>"><?php echo get_theme_mod('revive_button_text'); ?></a>
+                <a href="<?php esc_url(get_theme_mod('revive_button_url')); ?>"><?php echo esc_html(get_theme_mod('revive_button_text')); ?></a>
             </div>
         </div>
 

@@ -29,7 +29,7 @@ function revive_pagination() {
 	if( is_array($page_format) ) {
 	            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
 	            echo '<div class="pagination"><div><ul>';
-	            echo '<li><span>'. $paged . __(' of ','revive') . $wp_query->max_num_pages .'</span></li>';
+	            echo '<li><span>'. esc_html($paged . esc_html(' of ','revive')) . esc_html($wp_query->max_num_pages) .'</span></li>';
 	            foreach ( $page_format as $page ) {
 	                    echo "<li>$page</li>";
 	            }
@@ -60,8 +60,8 @@ if (class_exists('WP_Customize_Control')) {
  
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $dropdown
+                esc_html($this->label),
+                esc_html($dropdown)
             );
         }
     }
@@ -75,8 +75,8 @@ if (class_exists('WP_Customize_Control')) {
         public function render_content() {
              printf(
                 '<label class="customize-control-upgrade"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $this->description
+                 esc_html($this->label),
+                 esc_html($this->description)
             );
         }
     }
@@ -109,7 +109,7 @@ function revive_primary_class() {
 	if ( !revive_load_sidebar() ) 
 		$class = "col-md-12";
 	
-	echo $class;
+	echo esc_html($class);
 }
 add_action('revive_primary-width', 'revive_primary_class');
 
@@ -117,7 +117,7 @@ function revive_secondary_class() {
 	$sw = esc_html( get_theme_mod('revive_sidebar_width',4) );
 	$class = "col-md-".$sw;
 	
-	echo $class;
+	echo esc_html($class);
 }
 add_action('revive_secondary-width', 'revive_secondary_class');
 

@@ -18,7 +18,7 @@ function revive_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'revive' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e('Posts navigation', 'revive' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -49,7 +49,7 @@ function revive_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'revive' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e('Post navigation', 'revive' ); ?></h1>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'revive' ) );
@@ -79,13 +79,13 @@ function revive_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'revive' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+        esc_html_x('Posted on %s', 'post date', 'revive' ),
+		'<a href="' . get_permalink()  . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'revive' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+        esc_html_x( 'by %s', 'post author', 'revive' ),
+		'<span class="author vcard"><a class="url fn n" href="' .  get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
@@ -103,13 +103,13 @@ function revive_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'revive' ) );
 		if ( $categories_list && revive_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'revive' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'revive' ) . '</span>', $categories_list);
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'revive' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'revive' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'revive' ) . '</span>',$tags_list );
 		}
 	}
 
@@ -167,7 +167,7 @@ function revive_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'revive' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'revive' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php esc_html_e( 'Pingback:', 'revive' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'revive' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -188,7 +188,7 @@ function revive_comment( $comment, $args, $depth ) {
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'revive' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'revive' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
