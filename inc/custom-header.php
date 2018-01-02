@@ -33,6 +33,14 @@ function revive_custom_header_setup() {
 		'admin-head-callback'    => 'revive_admin_header_style',
 		'admin-preview-callback' => 'revive_admin_header_image',
 	) ) );
+    register_default_headers( array(
+            'default-image'    => array(
+                'url'            => '%s/assets/images/header.jpg',
+                'thumbnail_url'    => '%s/assets/images/header.jpg',
+                'description'    => __('Default Header Image', 'revive')
+            )
+        )
+    );
 }
 add_action( 'after_setup_theme', 'revive_custom_header_setup' );
 
