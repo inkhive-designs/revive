@@ -60,6 +60,7 @@ $wp_customize->add_section(
         'revive_sidebar_style',
         array(
             'default' => 'default',
+            'sanitize_callback' => 'revive_sanitize_sidebar_style'
         )
     );
 
@@ -76,7 +77,12 @@ $wp_customize->add_section(
             )
         )
     );
-
+    function revive_sanitize_sidebar_style( $input ) {
+        if ( in_array($input, array('default','sticky-sidebar') ) )
+            return $input;
+        else
+            return '';
+    }
     $wp_customize->add_setting(
         'revive_disable_sidebar',
         array( 'sanitize_callback' => 'revive_sanitize_checkbox', 'default'  => true )
@@ -243,5 +249,57 @@ $wp_customize->add_control(
     )
 );
 
+//menu alignment
+      $wp_customize->add_section(
+        'revive_menu_alignment_sec',
+        array(
+            'title'     => __('Menu Alignment','revive'),
+            'priority'  => 1,
+            'panel'			=> 'nav_menus'
+        )
+    );
+
+
+    $wp_customize->add_setting(
+        'revive_menu_alignment',
+        array( 'sanitize_callback' => 'revive_sanitize_menu_align',
+            'default' => 'left')
+    );
+
+    function revive_sanitize_menu_align( $input ) {
+        if ( in_array($input, array('right','left','center') ) )
+            return $input;
+        else
+            return '';
+    }
+
+    $wp_customize->add_control(
+        'revive_menu_alignment',array(
+            'label' => __('Select Menu Position','revive'),
+            'settings' => 'revive_menu_alignment',
+            'section'  => 'revive_menu_alignment_sec',
+            'type' => 'select',
+            'choices' => array(
+                'left' => __('Left','revive'),
+                'center' => __('Center','revive'),
+                'right' => __('Right','revive'),
+            )
+        )
+    );
+//disable footer menu
+    $wp_customize->add_setting(
+        'revive_disable_footer_menu',
+        array( 'sanitize_callback' => 'revive_sanitize_checkbox' )
+    );
+
+    $wp_customize->add_control(
+        'revive_disable_footer_menu', array(
+            'settings' => 'revive_disable_footer_menu',
+            'label'    => __( 'Disable Footer Menu.','revive' ),
+            'section'  => 'revive_menu_alignment_sec',
+            'type'     => 'checkbox',
+            'default'  => false
+        )
+    );
 }
 add_action( 'customize_register', 'revive_customize_register_layouts' );

@@ -77,7 +77,7 @@ if ( ! function_exists( 'revive_setup' ) ) :
             'default-image' => '',
         ) ) );
 
-        add_image_size('revive-pop-thumb',542, 343, true );
+        add_image_size('revive-pop-thumb',542, 340, true );
         add_image_size('revive-revive-pop-thumb-half',542, 170, true );
         add_image_size('revive-poster-thumb',542, 680, true );
     }

@@ -16,7 +16,7 @@
 			
 		<div class="out-thumb col-md-8 col-sm-8">
 			<header class="entry-header">
-				<h1 class="entry-title title-font"><a class="hvr-underline-reveal" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<h3 class="entry-title title-font"><a class="" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 				<div class="postedon"><?php revive_posted_on(); ?></div>
 				<span class="entry-excerpt"><?php echo esc_html(substr(get_the_excerpt(),0,200).(get_the_excerpt() ? "..." : "" )); ?></span>
 				<span class="readmore"><a class="hvr-underline-from-center" href="<?php the_permalink() ?>"><?php esc_html_e('Read More','revive'); ?></a></span>

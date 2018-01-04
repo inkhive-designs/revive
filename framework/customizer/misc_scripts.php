@@ -5,7 +5,7 @@ $wp_customize->add_section(
     'revive_sec_upgrade',
     array(
         'title'     => __('Discover Revive Pro','revive'),
-        'priority'  => 45,
+        'priority'  => 1,
     )
 );
 

@@ -63,6 +63,7 @@ Version 1.0.0.6
 	i) Fixed Bugs, when sticky posts were enabled. Featured posts go into next line no more
 
 Version 1.0.0.7
+
     i) Framework updated.
     ii) Typography option added for site title and description as well as page/post content.
     iii) 4 new skins added for better designing purpose.
@@ -73,4 +74,17 @@ Version 1.0.0.7
     viii) Footer menu Bug Fixed.
     ix) Footer menu on mobile screen bug fixed.
     x) Sticky sidebar added.
+
+Version 1.0.0.8
+
+    i) Added Menu Alignment control.
+    ii) Minor bug fixed of featured areas section.
+    iii) Minor bug fixed of Blog Layouts section.
+    iv) Slider issues fixed on mobile screen.
+
+Version 1.0.0.9
+
+    i) Featured area bug fixed.
+    ii) Revive Blog layout minor bug fixed.
+
 

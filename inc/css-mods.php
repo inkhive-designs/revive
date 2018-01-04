@@ -124,6 +124,19 @@ function revive_custom_css_mods() {
             echo "#primary-mono .entry-content { font-size:".esc_html($size).";}";
         endif;
     endif;
+
+    //menu alignment
+    if( get_theme_mod('revive_menu_alignment')=='right'):
+        echo "#top-menu{ float:right; }";
+
+    elseif( get_theme_mod('revive_menu_alignment')=='center'):
+        echo "#top-menu{ float: none; text-align: center;}
+                  #menu-my-menu ul{ text-align:left;}";
+    endif;
+    //disable footer menu
+    if ( get_theme_mod('revive_disable_footer_menu') ) :
+        echo "#site-navigation { display:none;}";
+    endif;
     echo "</style>";
 }
 
