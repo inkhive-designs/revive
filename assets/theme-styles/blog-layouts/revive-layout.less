@@ -1,5 +1,4 @@
 /* Revive Layout */
-
 .revive {
   margin: 2px;
   border: none;
@@ -48,24 +47,29 @@
     bottom: 5px;
     .transition(0.8s all ease);
     transition-delay: 0.2s;
-    h3 {
+    @media screen and (max-width: 767px){
+      opacity: 1;
+      right: 0px;
+    }
+    h3{
       font-size: 15px;
-      @media screen and (max-width: 767px) {
-        font-size: 12px;
-      }
       a {
         padding: 8px;
         display: block;
         max-width: 80%;
+        @media screen and (max-width: 767px) {
+          max-width: 100%;
+          background: @accent;
+          font-weight: 500;
+        }
         float: right;
-        background: black;
-        color: white;
+        background: @accent;
+        color: @onaccent;
         font-weight: lighter;
       }
     }
   }
   @media screen and (min-width: 767px) {
-
     &:hover {
       img {
         -webkit-filter: brightness(0.5) blur(1px);
@@ -78,4 +82,5 @@
       }
     }
   }
+
 }

@@ -87,4 +87,6 @@ Version 1.0.0.9
     i) Featured area bug fixed.
     ii) Revive Blog layout minor bug fixed.
 
+Version: 1.0.1.0
 
+    i) blog layout minor bug fixed.

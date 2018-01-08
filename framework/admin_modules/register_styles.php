@@ -3,7 +3,7 @@
  * Enqueue scripts and styles.
  */
 function revive_scripts() {
-    wp_enqueue_style( 'revive-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'revive-style', get_stylesheet_uri(),array(),1231 );
 
     wp_enqueue_style('revive-title-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('revive_title_font', 'Lato')) ).':100,300,400,700' );
 
@@ -21,7 +21,7 @@ function revive_scripts() {
 
     wp_enqueue_style( 'hover', get_template_directory_uri() . '/assets/css/hover.min.css' );
 
-    wp_enqueue_style( 'revive-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('revive_skin', 'default').'.css' );
+    wp_enqueue_style( 'revive-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('revive_skin', 'default').'.css',array(),1151 );
 
     wp_enqueue_script( 'revive-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
