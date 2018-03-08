@@ -43,11 +43,11 @@ function revive_custom_css_mods() {
 	
 	
 	if ( get_theme_mod('revive_title_font') ) :
-		echo ".title-font, h1, h2, .section-title { font-family: ".esc_html(get_theme_mod('revive_title_font','Lato'))."; }";
+		echo ".title-font, h1, h2, .section-title { font-family: ".esc_html(get_theme_mod('revive_title_font','Bree Serif'))."; }";
 	endif;
 	
 	if ( get_theme_mod('revive_body_font') ) :
-		echo "body { font-family: ".esc_html(get_theme_mod('revive_body_font','Lato'))."; }";
+		echo "body { font-family: ".esc_html(get_theme_mod('revive_body_font','Slabo 27px'))."; }";
 	endif;
 	
 	if ( get_theme_mod('revive_site_titlecolor') ) :
@@ -127,16 +127,33 @@ function revive_custom_css_mods() {
 
     //menu alignment
     if( get_theme_mod('revive_menu_alignment')=='right'):
-        echo "#top-menu{ float:right; }";
+        echo "#top-menu{ float:right; }
+               #footer-menu{float:right;}";
 
     elseif( get_theme_mod('revive_menu_alignment')=='center'):
-        echo "#top-menu{ float: none; text-align: center;}
-                  #menu-my-menu ul{ text-align:left;}";
+        echo "#top-menu{
+                   float: none;
+                   text-align: center;
+                   }
+                  #menu-my-menu ul{
+                   text-align:left;
+                   }
+                   #footer-menu{
+                   float: none;
+                   text-align: center;
+                   }
+                 ";
     endif;
     //disable footer menu
     if ( get_theme_mod('revive_disable_footer_menu') ) :
         echo "#site-navigation { display:none;}";
     endif;
+
+    if(get_theme_mod('revive_menu_alignment')=='right'):
+        echo ".footer-menu #site-navigation ul {
+           float: right;
+            overflow: hidden;}";
+        endif;
     echo "</style>";
 }
 

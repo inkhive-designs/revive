@@ -90,3 +90,9 @@ Version 1.0.0.9
 Version: 1.0.1.0
 
     i) blog layout minor bug fixed.
+
+Version 1.1.0
+
+    i) Sticky sidebar and stick social icons bug fixed.
+    ii) minor bug fixed.
+    iii) WooCommerce Added.

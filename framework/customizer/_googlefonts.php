@@ -10,19 +10,19 @@ $wp_customize->add_section(
     )
 );
 
-$font_array = array('Lato','Khula','Open Sans','Droid Sans','Droid Serif','Roboto Condensed','Bree Serif','Oswald','Slabo','Lora');
+$font_array = array('Lato','Khula','Open Sans','Droid Sans','Droid Serif','Roboto Condensed','Bree Serif','Oswald','Slabo 27px','Lora');
 $fonts = array_combine($font_array, $font_array);
 
 $wp_customize->add_setting(
     'revive_title_font',
     array(
-        'default'=> 'Lato',
+        'default'=> 'Bree Serif',
         'sanitize_callback' => 'revive_sanitize_gfont'
     )
 );
 
 function revive_sanitize_gfont( $input ) {
-    if ( in_array($input, array('Lato','Khula','Open Sans','Droid Sans','Droid Serif','Roboto Condensed','Bree Serif','Oswald','Slabo','Lora') ) )
+    if ( in_array($input, array('Lato','Khula','Open Sans','Droid Sans','Droid Serif','Roboto Condensed','Bree Serif','Oswald','Slabo 27px','Lora') ) )
         return $input;
     else
         return '';
@@ -40,7 +40,8 @@ $wp_customize->add_control(
 
 $wp_customize->add_setting(
     'revive_body_font',
-    array(	'default'=> 'Lato',
+    array(
+        'default'=> 'Slabo 27px',
         'sanitize_callback' => 'revive_sanitize_gfont' )
 );
 

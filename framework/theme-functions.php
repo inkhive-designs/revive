@@ -157,7 +157,11 @@ function revive_get_blog_layout(){
 }
 add_action('revive_blog_layout', 'revive_get_blog_layout');
 
-
+/** Load WooCommerce Compatibility FIle
+*/
+if ( class_exists('woocommerce') ) :
+    require get_template_directory() . '/framework/woocommerce.php';
+endif;
 
 /*
 ** Load Custom Widgets

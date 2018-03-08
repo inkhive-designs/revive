@@ -19,19 +19,7 @@ jQuery(document).ready( function() {
 	jQuery('.site-main').flexImages({rowHeight: 200, object: 'img'});
 	
 	
-	/*
-	
-jQuery('#site-navigation ul.menu').slicknav({
-		label: 'Menu',
-		duration: 1000,
-		prependTo:'#slickmenu'
-	});	
-	
-*/
-
-
-
-jQuery(document).ready( function() { 
+jQuery(document).ready( function() {
 	jQuery('#top-menu ul.menu').mobileMenu({
 		switchWidth: 767
 		});
@@ -56,18 +44,15 @@ jQuery(window).load(function() {
         });
     });
 
-
-
-
-
 //sticky social menu bar
 jQuery( document ).scroll(function() {
-        if (jQuery('#social-icons').visible()) {
-        jQuery('#social-icons-sticky').css("display", "none");
+    var y = $(this).scrollTop();
+    if (y > 700) {
+        jQuery('#social-icons-sticky').show();
+	 }
+    else {
+        jQuery('#social-icons-sticky').hide();
     }
-    	else{
-            jQuery('#social-icons-sticky').css("display", "block");
-		}
 });
 
 //sticky sidebar

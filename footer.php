@@ -11,12 +11,19 @@
 		</div><!-- #content -->
 	
 	</div><!--.mega-container-->
-	
-	<nav id="site-navigation" class="main-navigation" role="navigation">
-		<div class="container">
-			<?php wp_nav_menu( array( 'theme_location' => 'bottom' ) ); ?>
-		</div>
-	</nav><!-- #site-navigation -->
+
+<div class="footer-menu">
+    <div class="container">
+        <div id="footer-menu">
+            <?php wp_nav_menu( array( 'theme_location' => 'bottom' ) ); ?>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 	<?php get_sidebar('footer'); ?>
 

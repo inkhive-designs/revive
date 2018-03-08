@@ -80,6 +80,9 @@ if ( ! function_exists( 'revive_setup' ) ) :
         add_image_size('revive-pop-thumb',542, 340, true );
         add_image_size('revive-revive-pop-thumb-half',542, 170, true );
         add_image_size('revive-poster-thumb',542, 680, true );
+
+        //Declare woocommerce support
+        add_theme_support('woocommerce');
     }
 endif; // revive_setup
 add_action( 'after_setup_theme', 'revive_setup' );
