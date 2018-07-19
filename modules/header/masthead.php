@@ -15,7 +15,7 @@
 
     <div id="search-icon">
         <a id="searchicon">
-            <span class="fa fa-search"></span>
+            <span class="fas fa-search"></span>
         </a>
     </div>
 

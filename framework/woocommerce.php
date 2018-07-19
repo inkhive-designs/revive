@@ -125,12 +125,9 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'revive_gallery_four_colum
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
 	function loop_columns() {
-		$i = get_theme_mod('revive_woo_layout',3);
-		return $i; // 3 products per row
+		return 3; // 3 products per row
 	}
 }
-
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return '.get_theme_mod("revive_woo_qty", 12).';' ), 20 );
 
 // Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
 add_filter( 'woocommerce_add_to_cart_fragments', 'revive_header_add_to_cart_fragment' );

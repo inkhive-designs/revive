@@ -12,7 +12,6 @@ $social_networks = array( //Redefinied in Sanitization Function.
     'twitter' => __('Twitter','revive'),
     'google-plus' => __('Google Plus','revive'),
     'instagram' => __('Instagram','revive'),
-    'rss' => __('RSS Feeds','revive'),
     'vine' => __('Vine','revive'),
     'vimeo-square' => __('Vimeo','revive'),
     'youtube' => __('Youtube','revive'),
@@ -21,13 +20,16 @@ $social_networks = array( //Redefinied in Sanitization Function.
 
     $wp_customize->add_setting(
         'revive_disable_social_sticky',
-        array( 'sanitize_callback' => 'revive_sanitize_checkbox' )
+        array(
+            'sanitize_callback' => 'revive_sanitize_checkbox',
+            'transport'     => 'postMessage',
+        )
     );
 
     $wp_customize->add_control(
         'revive_disable_social_sticky', array(
             'settings' => 'revive_disable_social_sticky',
-            'label'    => __( 'Enable Sticky Sidebar.','revive' ),
+            'label'    => __( 'Enable Sticky Social Icons.','revive' ),
             'section'  => 'revive_social_section',
             'type'     => 'checkbox',
             'default'  => false
@@ -50,7 +52,8 @@ $social_networks = array( //Redefinied in Sanitization Function.
     $wp_customize->add_setting(
         'revive_social_icon_style_set', array(
         'sanitize_callback' => 'revive_sanitize_social_style',
-        'default' => 'hvr-ripple-out'
+        'default' => 'hvr-ripple-out',
+        'transport'	=> 'postMessage'
     ));
 
     function revive_sanitize_social_style( $input ) {
@@ -63,7 +66,7 @@ $social_networks = array( //Redefinied in Sanitization Function.
     $wp_customize->add_control( 'revive_social_icon_style_set', array(
         'settings' => 'revive_social_icon_style_set',
         'label' => __('Social Icon Style ','revive'),
-        'description' => __('You can choose your icon style','revive'),
+        'description' => __('You can choose your icon style. Please select a style and hover on the social icons to see.','revive'),
         'section' => 'revive_social_section',
         'type' => 'select',
         'choices' => $social_style,
@@ -77,7 +80,8 @@ for ($x = 1 ; $x <= ($social_count - 3) ; $x++) :
     $wp_customize->add_setting(
         'revive_social_'.$x, array(
         'sanitize_callback' => 'revive_sanitize_social',
-        'default' => 'none'
+        'default' => 'none',
+        'transport'	=> 'postMessage'
     ));
 
     $wp_customize->add_control( 'revive_social_'.$x, array(

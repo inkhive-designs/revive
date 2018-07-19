@@ -35,7 +35,7 @@ if ( get_theme_mod('revive_main_slider_enable' ) && is_front_page() ) :
 						
 						
 						?>
-			            <div id="caption_<?php echo $i ?>" class="nivo-html-caption">
+                    <div id="caption_<?php echo $i ?>" class="nivo-html-caption">
 			                <a href="<?php echo $url ?>">
 				                <div class="slide-title"><?php echo $title ?></div>
 				                <div class="slide-desc"><span><?php echo $desc ?></span></div>

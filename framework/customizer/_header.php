@@ -54,40 +54,6 @@ function revive_logo_enabled($control) {
 
 
 
-//Replace Header Text Color with, separate colors for Title and Description
-//Override revive_site_titlecolor
-$wp_customize->remove_control('display_header_text');
-$wp_customize->remove_setting('header_textcolor');
-$wp_customize->add_setting('revive_site_titlecolor', array(
-    'default'     => '#FFF',
-    'sanitize_callback' => 'sanitize_hex_color',
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control(
-        $wp_customize,
-        'revive_site_titlecolor', array(
-        'label' => __('Site Title Color','revive'),
-        'section' => 'colors',
-        'settings' => 'revive_site_titlecolor',
-        'type' => 'color'
-    ) )
-);
-
-$wp_customize->add_setting('revive_header_desccolor', array(
-    'default'     => '#FFF',
-    'sanitize_callback' => 'sanitize_hex_color',
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control(
-        $wp_customize,
-        'revive_header_desccolor', array(
-        'label' => __('Site Tagline Color','revive'),
-        'section' => 'colors',
-        'settings' => 'revive_header_desccolor',
-        'type' => 'color'
-    ) )
-);
-
 //Settings for Nav Area
 $wp_customize->add_setting( 'revive_disable_active_nav' , array(
     'default'     => true,
@@ -173,7 +139,10 @@ $wp_customize->add_control(
 
 $wp_customize->add_setting(
     'revive_hide_title_tagline',
-    array( 'sanitize_callback' => 'revive_sanitize_checkbox' )
+    array(
+        'sanitize_callback' => 'revive_sanitize_checkbox',
+        'transport'     => 'postMessage',
+    )
 );
 
 $wp_customize->add_control(
@@ -187,7 +156,10 @@ $wp_customize->add_control(
 
 $wp_customize->add_setting(
     'revive_branding_below_logo',
-    array( 'sanitize_callback' => 'revive_sanitize_checkbox' )
+    array(
+        'sanitize_callback' => 'revive_sanitize_checkbox',
+        'transport'     => 'postMessage'
+    )
 );
 
 $wp_customize->add_control(
@@ -209,7 +181,9 @@ $wp_customize->add_setting(
     'revive_center_logo',
     array(
         'sanitize_callback' => 'revive_sanitize_checkbox',
-        'default' => true )
+        'default' => true,
+        'transport'     => 'postMessage',
+    )
 );
 
 $wp_customize->add_control(

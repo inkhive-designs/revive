@@ -10,19 +10,21 @@ $wp_customize->add_section(
 );
 
 $wp_customize->add_setting(
-    'revive_upgrade',
+    'revive_important_links',
     array( 'sanitize_callback' => 'esc_textarea' )
 );
 
 $wp_customize->add_control(
     new WP_Customize_Upgrade_Control(
         $wp_customize,
-        'revive_upgrade',
+        'revive_important_links',
         array(
-            'label' => __('More of Everything','revive'),
-            'description' => __('Revive Pro has more of Everything. More New Features, More Options, Unlimited Slides, More Colors, More Fonts, More Layouts, Configurable Slider, Inbuilt Advertising Options, Multiple Skins, More Widgets, and a lot more options and comes with Dedicated Support. To Know More about the Pro Version, click here: <a href="http://inkhive.com/product/revive-pro/">Upgrade to Pro</a>.','revive'),
-            'section' => 'revive_sec_upgrade',
-            'settings' => 'revive_upgrade',
+            'settings'		=> 'revive_important_links',
+            'section'		=> 'revive_sec_upgrade',
+            'description'	=> '<a class="revive-important-links" href="https://inkhive.com/contact-us/" target="_blank">'.__('InkHive Support Forum', 'revive').'</a>
+                                    <a class="revive-important-links" href="https://demo.inkhive.com/revive-plus/" target="_blank">'.__('Revive Live Demo', 'revive').'</a>
+                                    <a class="revive-important-links" href="https://www.facebook.com/inkhivethemes/" target="_blank">'.__('We Love Our Facebook Fans', 'revive').'</a>
+                                    <a class="revive-important-links" href="https://wordpress.org/support/theme/revive/reviews" target="_blank">'.__('Review Us', 'revive').'</a>'
         )
     )
 );

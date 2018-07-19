@@ -9,7 +9,7 @@ function revive_scripts() {
 
     wp_enqueue_style('revive-body-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('revive_body_font', 'Slabo 27px')) ).':100,300,400,700' );
 
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/fontawesome-all.min.css' );
 
     wp_enqueue_style( 'nivo-slider', get_template_directory_uri() . '/assets/css/nivo-slider.css' );
 
@@ -21,7 +21,7 @@ function revive_scripts() {
 
     wp_enqueue_style( 'hover', get_template_directory_uri() . '/assets/css/hover.min.css' );
 
-    wp_enqueue_style( 'revive-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('revive_skin', 'default').'.css',array(),1151 );
+    wp_enqueue_style( 'revive-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('revive_skins', 'default').'.css', array(), null );
 
     wp_enqueue_script( 'revive-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

@@ -174,50 +174,6 @@ function revive_show_sidebar_options($control) {
 
 }
 
-class Revive_Custom_CSS_Control extends WP_Customize_Control {
-    public $type = 'textarea';
-
-    public function render_content() {
-        ?>
-        <label>
-            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <textarea rows="8" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-        </label>
-        <?php
-    }
-}
-
-$wp_customize-> add_section(
-    'revive_custom_codes',
-    array(
-        'title'			=> __('Custom CSS','revive'),
-        'description'	=> __('Enter your Custom CSS to Modify design.','revive'),
-        'priority'		=> 11,
-        'panel'			=> 'revive_design_panel'
-    )
-);
-
-$wp_customize->add_setting(
-    'revive_custom_css',
-    array(
-        'default'		=> '',
-        'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'wp_filter_nohtml_kses',
-        'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-    )
-);
-
-$wp_customize->add_control(
-    new Revive_Custom_CSS_Control(
-        $wp_customize,
-        'revive_custom_css',
-        array(
-            'section' => 'revive_custom_codes',
-            'settings' => 'revive_custom_css'
-        )
-    )
-);
-
 function revive_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
@@ -226,9 +182,26 @@ $wp_customize-> add_section(
     'revive_custom_footer',
     array(
         'title'			=> __('Custom Footer Text','revive'),
-        'description'	=> __('Enter your Own Copyright Text.','revive'),
         'priority'		=> 11,
         'panel'			=> 'revive_design_panel'
+    )
+);
+
+$wp_customize->add_setting(
+    'revive_fc_line_disable',
+    array(
+        'sanitize_callback' => 'revive sanitize_checkbox',
+        'transport' => 'postMessage'
+    )
+);
+
+$wp_customize->add_control(
+    'revive_fc_line_disable',
+    array(
+        'settings' => 'revive_fc_line_disable',
+        'section'   => 'revive_custom_footer',
+        'label'     => __('Disable Footer Credit Line', 'revive'),
+        'type'  =>   'checkbox'
     )
 );
 
@@ -236,7 +209,8 @@ $wp_customize->add_setting(
     'revive_footer_text',
     array(
         'default'		=> '',
-        'sanitize_callback'	=> 'sanitize_text_field'
+        'sanitize_callback'	=> 'sanitize_text_field',
+        'transport'     => 'postMessage'
     )
 );
 
@@ -244,6 +218,7 @@ $wp_customize->add_control(
     'revive_footer_text',
     array(
         'section' => 'revive_custom_footer',
+        'description'	=> __('Enter your Own Copyright Text.','revive'),
         'settings' => 'revive_footer_text',
         'type' => 'text'
     )
@@ -253,7 +228,7 @@ $wp_customize->add_control(
       $wp_customize->add_section(
         'revive_menu_alignment_sec',
         array(
-            'title'     => __('Menu Alignment','revive'),
+            'title'     => __('Menu Settings','revive'),
             'priority'  => 1,
             'panel'			=> 'nav_menus'
         )
@@ -275,7 +250,7 @@ $wp_customize->add_control(
 
     $wp_customize->add_control(
         'revive_menu_alignment',array(
-            'label' => __('Select Menu Position','revive'),
+            'label' => __('Select Menu Alignment','revive'),
             'settings' => 'revive_menu_alignment',
             'section'  => 'revive_menu_alignment_sec',
             'type' => 'select',
@@ -289,7 +264,10 @@ $wp_customize->add_control(
 //disable footer menu
     $wp_customize->add_setting(
         'revive_disable_footer_menu',
-        array( 'sanitize_callback' => 'revive_sanitize_checkbox' )
+        array(
+            'sanitize_callback' => 'revive_sanitize_checkbox',
+            'transport'     => 'postMessage',
+        )
     );
 
     $wp_customize->add_control(

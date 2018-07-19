@@ -15,30 +15,26 @@ function revive_custom_css_mods() {
 	//If Title and Desc is set to Show Below the Logo
 	if (  get_theme_mod('revive_branding_below_logo') ) :
 		
-		echo "#masthead #text-title-desc { display: block; clear: both; } ";
-		
+		echo "#masthead #text-title-desc { display: inline; } ";
+	else :
+        echo "#masthead #text-title-desc { display: inline-block; } ";
 	endif;
-	
-	//If Logo is Centered
-	if ( get_theme_mod('revive_center_logo',true) ) :
-		
-		echo "#masthead #text-title-desc, #masthead #site-logo { float: none; } .site-branding { text-align: center; } #text-title-desc { display: inline-block; }";
-		
-	endif;
-	
+
 	//Exception: When Logo is Centered, and Title Not Set to display in next line.
 	if ( get_theme_mod('revive_center_logo') && !get_theme_mod('revive_branding_below_logo') ) :
-		echo ".site-branding #text-title-desc { text-align: left; }";
+		echo ".site-branding { text-align: center; }";
+		echo ".site-branding #text-title-desc { text-align: left !important; }";
 	endif;
 	
 	//Exception: When Logo is centered, but there is no logo.
-	if ( get_theme_mod('revive_center_logo') && !get_theme_mod('revive_logo') ) :
-		echo ".site-branding #text-title-desc { text-align: center; }";
-	endif;
+	if ( get_theme_mod('revive_center_logo') && get_theme_mod('revive_branding_below_logo') ) :
+        echo ".site-branding { text-align: center; }";
+        echo ".site-branding #text-title-desc { text-align: center; }";
+    endif;
 	
 	//Exception: IMage transform origin should be left on Left Alignment, i.e. Default
 	if ( !get_theme_mod('revive_center_logo') ) :
-		echo "#masthead #site-logo img { transform-origin: left; }";
+		echo "#masthead #site-logo img { transform-origin: center; }";
 	endif;	
 	
 	
@@ -57,10 +53,6 @@ function revive_custom_css_mods() {
 	
 	if ( get_theme_mod('revive_header_desccolor','#777') ) :
 		echo "#masthead h2.site-description { color: ".esc_html(get_theme_mod('revive_header_desccolor','#FFF'))."; }";
-	endif;
-	
-	if ( get_theme_mod('revive_custom_css') ) :
-		echo  esc_html(strip_tags(get_theme_mod('revive_custom_css')));
 	endif;
 	
 	
@@ -92,6 +84,7 @@ function revive_custom_css_mods() {
     //site title font size
     //var_dump(get_theme_mod('revive_content_site_fontsize_set'));
     if(get_theme_mod('revive_content_site_title_fontsize_set')):
+        $site_title_size_val=get_theme_mod('revive_content_site_title_fontsize_set');
         $site_title_size_val=get_theme_mod('revive_content_site_title_fontsize_set');
         if($site_title_size_val != 'default'):
             echo "#masthead h1.site-title {font-size:".esc_html($site_title_size_val)."px !important;}";

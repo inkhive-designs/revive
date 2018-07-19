@@ -44,9 +44,29 @@ jQuery(window).load(function() {
         });
     });
 
+//Posts Slider
+jQuery(window).load(function() {
+    jQuery('#nivoSliderPosts').nivoSlider({
+        prevText: "<i class='fa fa-chevron-circle-left'></i>",
+        nextText: "<i class='fa fa-chevron-circle-right'></i>",
+		// beforeChange: function() {
+        	// jQuery('.slider-wrapper .nivo-caption').animate({
+         //        opacity: 0,
+         //        marginLeft: -10,
+         //    },500, 'linear');
+		// }
+		// afterChange: function(){
+        	// jQuery('.slider-wrapper .nivo-caption').animate({
+		// 		opacity: 1,
+		// 		marginLeft: 0,
+		// 	}, 500, 'linear');
+		// },
+    });
+});
+
 //sticky social menu bar
 jQuery( document ).scroll(function() {
-    var y = $(this).scrollTop();
+    var y = jQuery(this).scrollTop();
     if (y > 700) {
         jQuery('#social-icons-sticky').show();
 	 }

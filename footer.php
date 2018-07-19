@@ -29,9 +29,12 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info container">
-			<?php printf( esc_html('Theme Designed by %1$s.', 'revive' ), '<a target ="blank" href="'.esc_url("http://inkhive.com/").'" rel="designer">InkHive.com</a>' ); ?>
-			<span class="sep"></span>
-			<?php echo ( esc_html(get_theme_mod('revive_footer_text')) == '' ) ? ('&copy; '.date('Y').' '.get_bloginfo('name').esc_html('. All Rights Reserved. ','revive')) : esc_html( get_theme_mod('revive_footer_text') ); ?>
+			<span class="credit-line">
+                <?php printf( esc_html('Theme Designed by %1$s.', 'revive' ), '<a target ="blank" href="'.esc_url("http://inkhive.com/").'" rel="designer">InkHive.com</a>' ); ?>
+            </span>
+			<span class="sep">
+                <?php echo ( esc_html(get_theme_mod('revive_footer_text')) == '' ) ? ('&copy; '.date('Y').' '.get_bloginfo('name').esc_html('. All Rights Reserved. ','revive')) : esc_html( get_theme_mod('revive_footer_text') ); ?>
+            </span>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	

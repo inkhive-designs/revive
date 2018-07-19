@@ -28,11 +28,13 @@
             <?php get_template_part('modules/social/social', 'fa'); ?>
         </div>
     <?php endif;?>
-	
+
+    <?php get_template_part('framework/featured-components/featured', 'area1'); ?>
+    <?php get_template_part('framework/featured-components/featured-posts', 'slider'); ?>
+    <?php get_template_part('framework/featured-components/featured-mega', 'post'); ?>
+    <?php get_template_part('framework/featured-components/featured', 'area2'); ?>
+
 	<div class="mega-container">
-			
-		<?php get_template_part('framework/featured-components/featured', 'area1'); ?>
-		<?php get_template_part('framework/featured-components/featured', 'area2'); ?>
 		
 		<?php get_template_part('slider', 'nivo' ); ?>
 	
