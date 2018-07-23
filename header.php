@@ -33,6 +33,7 @@
     <?php get_template_part('framework/featured-components/featured-posts', 'slider'); ?>
     <?php get_template_part('framework/featured-components/featured-mega', 'post'); ?>
     <?php get_template_part('framework/featured-components/featured', 'area2'); ?>
+    
 
 	<div class="mega-container">
 		

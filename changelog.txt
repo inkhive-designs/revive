@@ -96,3 +96,10 @@ Version 1.1.0
     i) Sticky sidebar and stick social icons bug fixed.
     ii) minor bug fixed.
     iii) WooCommerce Added.
+
+Version 1.2.0
+
+	i) Added 2 New Featured Areas
+	ii) Improved Customizer Interface
+	iii) Added Support for WPForms-Lite
+	iv)	Fixed a lot of bugs

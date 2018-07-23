@@ -131,6 +131,7 @@ $wp_customize->add_control(
         'revive_fposts_slider_sec',
         array(
             'title'     => __('Featured Posts Slider','revive'),
+            'description'	=> __('<i>Selected number of Latest Posts are displayed in the Slider with Featured Image as Slide</i>', 'revive'),
             'priority'  => 10,
             'panel'     => 'revive_fca_panel'
         )
@@ -235,15 +236,16 @@ $wp_customize->add_control(
 
     $wp_customize->add_setting(
         'revive_fm_post_cat',
-        array( 'sanitize_callback' => 'revive_sanitize_category' )
+        array( 'sanitize_callback' => 'sanitize_text_field' )
     );
 
     $wp_customize->add_control(
-        new Revive_WP_Customize_Category_Control(
+        new Revive_Posts_Live_Search_Control(
             $wp_customize,
             'revive_fm_post_cat',
             array(
-                'label'    => __('Category For Mega Post.','revive'),
+                'label'    => __('select the Post','revive'),
+                'description'	=> __('Enter the Post Title in the Text Field below', 'revive'),
                 'settings' => 'revive_fm_post_cat',
                 'section'  => 'revive_fm_post'
             )

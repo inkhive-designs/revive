@@ -14,16 +14,12 @@ function revive_custom_css_mods() {
 	
 	//If Title and Desc is set to Show Below the Logo
 	if (  get_theme_mod('revive_branding_below_logo') ) :
-		
-		echo "#masthead #text-title-desc { display: inline; } ";
-	else :
-        echo "#masthead #text-title-desc { display: inline-block; } ";
+		echo "#masthead #text-title-desc { display: block; } ";
 	endif;
 
 	//Exception: When Logo is Centered, and Title Not Set to display in next line.
 	if ( get_theme_mod('revive_center_logo') && !get_theme_mod('revive_branding_below_logo') ) :
 		echo ".site-branding { text-align: center; }";
-		echo ".site-branding #text-title-desc { text-align: left !important; }";
 	endif;
 	
 	//Exception: When Logo is centered, but there is no logo.

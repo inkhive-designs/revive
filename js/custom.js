@@ -49,18 +49,19 @@ jQuery(window).load(function() {
     jQuery('#nivoSliderPosts').nivoSlider({
         prevText: "<i class='fa fa-chevron-circle-left'></i>",
         nextText: "<i class='fa fa-chevron-circle-right'></i>",
-		// beforeChange: function() {
-        	// jQuery('.slider-wrapper .nivo-caption').animate({
-         //        opacity: 0,
-         //        marginLeft: -10,
-         //    },500, 'linear');
-		// }
-		// afterChange: function(){
-        	// jQuery('.slider-wrapper .nivo-caption').animate({
-		// 		opacity: 1,
-		// 		marginLeft: 0,
-		// 	}, 500, 'linear');
-		// },
+        manualAdvance: true,
+		beforeChange: function() {
+        	jQuery('.slider-wrapper .nivo-caption').animate({
+                opacity: 0,
+                marginLeft: -10,
+            },500, 'linear');
+		},
+		afterChange: function(){
+        	jQuery('.slider-wrapper .nivo-caption').animate({
+				opacity: 1,
+				marginLeft: 0,
+			}, 500, 'linear');
+		},
     });
 });
 

@@ -105,6 +105,29 @@ if (class_exists('WP_Customize_Control')) {
         }
     }
 }
+
+if ( class_exists('WP_Customize_Control')) {
+	class Revive_Posts_Live_Search_Control extends WP_Customize_Control {
+		/**
+		 *	Render the Control's Content
+		**/
+		public function render_content() { ?>
+			
+			 <span class="customize-control-title">
+            <?php echo esc_html( $this->label ); ?>
+            </span>
+
+            <?php if($this->description){ ?>
+                <span class="description customize-control-description">
+            	<?php echo wp_kses_post($this->description); ?>
+            </span>
+            <?php } ?>
+            <input type="text" id="post_search" autocomplete="off" <?php $this->link(); ?> value="<?php echo $this->value(); ?>">
+            <div id="search-results"></div>
+		<?php
+		}
+	}
+}
   
 /*
 ** Function to check if Sidebar is enabled on Current Page 
@@ -194,4 +217,62 @@ endif;
 
 require get_template_directory() . '/framework/widgets/recent-posts.php';
 
+
+/**
+ *	JS for the Customizer Controls
+**/
+function revive_customize_control_js() {
+	
+	wp_enqueue_script( 'revive_customizer_control_js', get_template_directory_uri() . '/js/customize-control.js', array(), 93846712, true );
+	
+	
+}
+add_action( 'customize_controls_enqueue_scripts', 'revive_customize_control_js', 99);
+
+
+/**
+ *	AJAX Functionality for Mega Post Search in Customizer
+**/
+
+add_action( 'wp_ajax_post_title_list', 'revive_ajax_post_title_list');
+add_action( 'wp_ajax_nopriv_post_title_list', 'revive_ajax_post_title_list');
+
+function revive_ajax_post_title_list() {
+	
+	$string	=	$_POST['post_title'];
+	
+	$args	=	array(
+					'post_type'			=> 'post',
+					'posts_per_page'	=> -1
+				);
+				
+	$posts_array	=	get_posts( $args );
+	$title_array	=	wp_list_pluck($posts_array, 'post_title'); ?>
+	
+		<ul id="post-title-dropdown">
+			<?php
+				foreach( $title_array as $title ) { ?>
+					<?php 
+					if ( stripos( $title, $string ) !== false ) { ?>
+					
+						<li><?php echo $title; ?></li>
+						
+					<?php
+					} 
+				}
+			?>
+		</ul>
+	
+	<?php
+	die();
+}
+
+/**
+ *	Setting up a PHP constant for use in WP Forms Lite Plugin
+**/
+
+
+if ( ! defined( 'WPFORMS_SHAREASALE_ID' ) ) {
+	define( 'WPFORMS_SHAREASALE_ID', '64312' );
+}
 

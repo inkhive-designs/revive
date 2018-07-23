@@ -63,33 +63,28 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 3. Hover.css
 	- Copyright (c) 2014-2015 Ian Lunn
 	- MIT License
-	- http://ianlunn.github.io/Hover/
+	- http://ianlunn.github.io/Hover/	
 	
-4. Slicknav
-	- - Copyright (c) 2014 Computer Wolf
-	- MIT License
-	- https://github.com/ComputerWolf/SlickNav		
-	
-5. Nivo Slider
+4. Nivo Slider
 	- Copyright (c) 2010-2012 Dev7studios
 	- MIT LIcense
 	- https://github.com/gilbitron/Nivo-Slider	
 	
-6. _S/Underscores Framework
+5. _S/Underscores Framework
 	- Copyright (c) 2014-16 Automattic
 	- GPL v2
 	- http://underscores.me
 	
-7. jQuery Flex Images
+6. jQuery Flex Images
 	- Copyright (c) 2015 Pixabay.xom
  	- https://github.com/Pixabay/jQuery-flexImages
  	- MIT License
 
-8. Modernizer 			
+7. Modernizer 			
 	- MIT and BSD
 	- http://modernizr.com
 	
-9. Responsive Menu
+8. Responsive Menu
 	- Copyright (c) 2014 Matt Kerseley
 	- https://github.com/mattkersley/Responsive-Menu
 	- MIT license

@@ -1,0 +1,131 @@
+/* Globals */
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes showreadmore {
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showreadmore {
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes showex {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes showex {
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes showrmbox {
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes showrmbox {
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+/* Customizer Styles */
+li#accordion-section-revive_sec_upgrade h3:before {
+  content: "\f05a";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+/* ----------------
+Important Links
+ -----------------*/
+.revive-important-links {
+  background: #9ac4cc;
+  padding: 5px 10px;
+  color: #FFF !important;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  line-height: 1.2;
+  box-shadow: none;
+  font-style: normal;
+  text-decoration: none;
+}
+.revive-important-links:hover {
+  background: #67a7b2;
+}
+/*-------------
+Skins
+ --------------*/
+.revive-skin-list li.color-boxes {
+  display: inline-block;
+  margin-right: 6px;
+  border: 4px solid transparent;
+}
+.revive-skin-list li.skin-active {
+  border: 4px solid #FFF;
+}
+.revive-skin-list li:hover {
+  border: 4px solid #FFF;
+}
+.customize-control-skins .custom_skin_control {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 4px;
+  position: relative;
+}
+.customize-control-skins input[type=radio]:checked:before {
+  content: "\f00c" !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  text-indent: 0;
+  color: white;
+  position: absolute;
+  font-size: 17px !important;
+  top: 53%;
+  left: 30%;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  background: none;
+  line-height: 0 !important;
+  border-radius: 0;
+}
+/*------------------
+   AJAX Dropdown
+------------------*/
+#search-results ul {
+  background: white;
+  border: solid 1px #ddd;
+}
+#search-results ul li {
+  margin: 0px;
+  padding: 5px 8px;
+  word-wrap: break-word;
+  cursor: default;
+}
+#search-results ul li:hover {
+  background: #aaa;
+  color: white;
+}

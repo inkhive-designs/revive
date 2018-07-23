@@ -34,3 +34,8 @@ require get_template_directory() . '/framework/customizer/init.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load TGM.
+ */
+require get_template_directory() . '/framework/tgmpa.php';

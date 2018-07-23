@@ -28,13 +28,12 @@
         value.bind( function ( to ) {
             if(to == true ) {
                 $( '#text-title-desc' ).css({
-                    'display' : 'inline',
+                    'display' : 'block',
                 });
             }
             else {
                 $( '#text-title-desc' ).css( {
                     'display' : 'inline-block',
-                    'text-align' : 'left',
                 });
             }
         });
