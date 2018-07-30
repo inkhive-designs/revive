@@ -103,3 +103,8 @@ Version 1.2.0
 	ii) Improved Customizer Interface
 	iii) Added Support for WPForms-Lite
 	iv)	Fixed a lot of bugs
+
+Version 1.2.1
+
+	i) Improved Slider Functionality
+	ii) Added ShareASale ID and WPForms notification

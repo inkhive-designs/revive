@@ -88,6 +88,10 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 	- Copyright (c) 2014 Matt Kerseley
 	- https://github.com/mattkersley/Responsive-Menu
 	- MIT license
+
+9. TGM Plugin Activation
+	- www.tgmpluginactivation.com
+	- GPL 2.0
 	
 
 All Other Resources, apart from the ones mentioned above have been created by me fall under GPL v3 license of the theme.	

@@ -6,7 +6,9 @@
 //Define all Variables.
 if ( get_theme_mod('revive_main_slider_enable' ) && is_front_page() ) : 
 
-	$count_x = $count = get_theme_mod('revive_main_slider_count');
+	//$count_x = $count = get_theme_mod('revive_main_slider_count');
+	
+	$slides		=	json_decode( get_theme_mod( 'revive_upload_slides', TRUE ) );
 
 		
 		?>
@@ -14,35 +16,40 @@ if ( get_theme_mod('revive_main_slider_enable' ) && is_front_page() ) :
 			<div class="slider-wrapper theme-default">
 		            <div id="nivoSlider" class="nivoSlider">
 		            <?php
-		            for ( $i = 1; $i <= $count; $i++ ) :
+			        $count = 1;
+		            foreach( $slides as $slide ) :
 
-						$url = esc_url ( get_theme_mod('revive_slide_url'.$i) );
-						$img = esc_url ( get_theme_mod('revive_slide_img'.$i) );
+						$url 	= esc_url ( $slide->url );
+						$img 	= esc_url ( wp_get_attachment_image_src( $slide->id, 'full' )[0] );
 						
 						?>
-			            <a href="<?php echo esc_html($url); ?>"><img alt= "<?php echo esc_html( get_theme_mod('revive_slide_title'.$i) ); ?>" src="<?php echo $img ?>" title="#caption_<?php echo esc_html($i) ?>" /></a>
-		             <?php endfor; ?>
+			            <a href="<?php echo $url; ?>"><img alt= "<?php echo esc_html( get_theme_mod('revive_slide_title'.$count) ); ?>" src="<?php echo $img ?>" title="#caption_<?php echo esc_html($count) ?>" /></a>
+			            
+			            <?php $count++; ?>
+		             <?php endforeach; ?>
 		               
 		            </div>
 		            
 		            <?php
-		            for ( $i = 1; $i <= $count_x; $i++ ) :
-
-						$title = esc_html( get_theme_mod('revive_slide_title'.$i) );
-						$desc = esc_html( get_theme_mod('revive_slide_desc'.$i) );
-						$button = esc_html( get_theme_mod('revive_slide_CTA_button'.$i) );
-						$url = esc_url ( get_theme_mod('revive_slide_url'.$i) );
+			            $count = 1;
+		            foreach ( $slides as $slide ) :
 						
+						$url 	=	esc_url ( $slide->url );
+						$button	=	esc_html( $slide->cta );
+						$title 	=	esc_html( $slide->title );
+						$desc 	=	esc_html( $slide->description );
+					
 						
 						?>
-                    <div id="caption_<?php echo $i ?>" class="nivo-html-caption">
+                    <div id="caption_<?php echo $count ?>" class="nivo-html-caption">
 			                <a href="<?php echo $url ?>">
 				                <div class="slide-title"><?php echo $title ?></div>
 				                <div class="slide-desc"><span><?php echo $desc ?></span></div>
 				                <?php if ($button != "") { ?><div class="slide-cta"><span><?php echo $button?></span></div><?php } ?>
 			                </a>
 			            </div>
-		            <?php endfor; ?>
+			            <?php $count++; ?>
+		            <?php endforeach; ?>
 		            
 		        </div>
 		</div> 

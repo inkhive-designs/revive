@@ -267,12 +267,88 @@ function revive_ajax_post_title_list() {
 	die();
 }
 
+
+/**
+ *	Slider Functions
+**/
+
+add_filter( 'attachment_fields_to_edit', 'applyFilter', 99, 2 );
+		
+
+function applyFilter( $form_fields, $post ) {
+		
+	$form_fields['post_title']	=	array(
+		'label'	=> __('Title', 'revive'),
+		'html'	=> 	"<input type='text' class='text slide_title' value='" . get_the_title( $post->ID ) . "' /><br />",
+		'input'	=> 'text',
+	);
+	
+	$form_fields['post_content']	=	array(
+		'label'	=> __('Description', 'revive'),
+		'html'	=> "<textarea style='width: 100%'></textarea>",
+		'value'	=> $post->post_content
+	);
+	
+	$form_fields['revive_link']	=	array(
+		'label'	=>	__( 'Slide link', 'revive' ),
+		'helps'	=> __('Add the URL for the Slide <b>(Used only in Main Slider)</b>', 'revive' ),
+		'input'	=> 'text',
+		'value'	=> get_post_meta( $post->ID, 'revive_link', true ),
+		'html'	=> "<input type='text' class='text revive_link' value='" . get_post_meta( $post->ID, 'revive_link', true ) . "' /><br />",
+	);
+	
+	$form_fields['cta_button']	=	array(
+		'label'	=> __( 'CTA Button', 'revive'),
+		'helps'	=> __( 'Enter the text to be displayed in Call To Action Button <b>(Used only in Main Slider)</b>', 'revive' ),
+		'input'	=> 'text',
+		'html'	=> "<input type='text' class='text cta_button' value='" . get_post_meta( $post->ID, 'cta_button', true ) . "' /><br />",
+		'value'	=> get_post_meta( $post->ID, 'cta_button', true )
+	);
+ 
+    // We return the completed $form_fields array
+    return $form_fields;
+}
+	
+add_filter( 'attachment_fields_to_save', 'saveFields', 11, 2 );
+	
+function saveFields( $post, $attachment ) {
+	
+	if ( isset( $attachment['revive_link'] ) )
+		update_post_meta( $post['ID'], 'revive_link', $attachment['revive_link'] );
+	
+	if ( isset( $attachment['cta_button'] ) )
+		update_post_meta( $post['ID'], 'cta_button', $attachment['cta_button'] );
+		
+	return $post;
+}
+	
+/**
+ * Save values of Author Name and URL in media uploader modal via AJAX
+ */
+
+add_action('wp_ajax_save-attachment-compat', 'revive_meta_save_ajax', 0, 1);
+
+function revive_meta_save_ajax() {
+
+    $post_id = $_POST['id'];
+
+    if( isset( $_POST['attachments'][$post_id]['revive_link'] ) )
+        update_post_meta( $post_id, 'revive_link', $_POST['attachments'][$post_id]['revive_link'] );
+
+    if( isset( $_POST['attachments'][$post_id]['cta_button'] ) )
+        update_post_meta( $post_id, 'cta_button', $_POST['attachments'][$post_id]['cta_button'] );
+
+    clean_post_cache($post_id);
+
+}
+
+
 /**
  *	Setting up a PHP constant for use in WP Forms Lite Plugin
 **/
 
 
 if ( ! defined( 'WPFORMS_SHAREASALE_ID' ) ) {
-	define( 'WPFORMS_SHAREASALE_ID', '64312' );
+	define( 'WPFORMS_SHAREASALE_ID', '1802605' );
 }
 

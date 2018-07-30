@@ -21,7 +21,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'revive_box_enable', array(
         'settings' => 'revive_box_enable',
-        'label'    => __( 'Enable Featured Area 1.', 'revive' ),
+        'label'    => __( 'Enable Featured Area 1 on Front Page.', 'revive' ),
         'section'  => 'revive_fc_boxes',
         'type'     => 'checkbox',
     )
@@ -83,7 +83,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'revive_fa2_enable', array(
         'settings' => 'revive_fa2_enable',
-        'label'    => __( 'Enable Featured Area 2.', 'revive' ),
+        'label'    => __( 'Enable Featured Area 2 on Front Page.', 'revive' ),
         'section'  => 'revive_fc_fa2',
         'type'     => 'checkbox',
     )
@@ -244,7 +244,7 @@ $wp_customize->add_control(
             $wp_customize,
             'revive_fm_post_cat',
             array(
-                'label'    => __('select the Post','revive'),
+                'label'    => __('Select the Post','revive'),
                 'description'	=> __('Enter the Post Title in the Text Field below', 'revive'),
                 'settings' => 'revive_fm_post_cat',
                 'section'  => 'revive_fm_post'

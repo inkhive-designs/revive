@@ -20,7 +20,10 @@ $wp_customize->add_section(
 
 $wp_customize->add_setting(
     'revive_blog_layout',
-    array( 'sanitize_callback' => 'revive_sanitize_blog_layout' )
+    array( 
+    'default'			=> 'revive',
+    'sanitize_callback' => 'revive_sanitize_blog_layout'
+    )
 );
 
 function revive_sanitize_blog_layout( $input ) {
