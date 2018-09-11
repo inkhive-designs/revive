@@ -235,7 +235,6 @@ add_action( 'customize_controls_enqueue_scripts', 'revive_customize_control_js',
 **/
 
 add_action( 'wp_ajax_post_title_list', 'revive_ajax_post_title_list');
-add_action( 'wp_ajax_nopriv_post_title_list', 'revive_ajax_post_title_list');
 
 function revive_ajax_post_title_list() {
 	

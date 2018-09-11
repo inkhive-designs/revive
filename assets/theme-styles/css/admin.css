@@ -154,3 +154,9 @@ Skins
 .customize-control .reset_slide_button {
   float: right;
 }
+/*--------------------
+ WPForms Notification
+--------------------*/
+.wpforms-notice {
+  padding: 0 5%;
+}

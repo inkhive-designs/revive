@@ -1,41 +1,36 @@
 <?php
 function revive_customize_register_static_page($wp_customize) {
+	
     //Static Page
-    $wp_customize->add_panel('revive_custom_page_panel',
-        array(
-            'title' => __('Custom Pages', 'revive'),
-            'priority' => 100,
-        )
-    );
-
-    $wp_customize->add_section('revive_custom_page_section',
-        array(
-            'title' => __('Contact Us', 'revive'),
-            'panel' => 'revive_custom_page_panel',
-        )
-    );
-
-    //Info on how to use this
-    $wp_customize->add_setting(
-        'revive_cpw',
-        array( 'sanitize_callback' => 'esc_textarea' )
-    );
-
-    $wp_customize->add_control(
-        new WP_Customize_Upgrade_Control(
-            $wp_customize,
-            'revive_cpw',
-            array(
-                'label' => __('How to Create a Beautiful Contact us Page?','revive'),
-                'description' => __('To do so, go to your Dashboard - Pages - Add New. <br/> 
-	            In the Add New Page, Give the Page a title and add some content to it if you want to. And then Set the template of the page to <strong>Contact Us</strong> from "Default Template". <br/><br/>
-	            Once you have done so, open the contact us page in your browser and click on Customize from the Admin Bar. Once you are in the Customizer you can Comeback to this section and finish designing your custom page.','revive'),
-                'section' => 'revive_custom_page_section',
-                'settings' => 'revive_cpw',
-            )
-        )
-    );
-
+    if ( class_exists('WPForms') ) {
+	    $wp_customize->add_section('revive_custom_page_section',
+	        array(
+	            'title' => __('Contact Us', 'revive'),
+	            'priority'	=> 45
+	        )
+	    );
+	
+	    //Info on how to use this
+	    $wp_customize->add_setting(
+	        'revive_cpw',
+	        array( 'sanitize_callback' => 'esc_textarea' )
+	    );
+	
+	    $wp_customize->add_control(
+	        new WP_Customize_Upgrade_Control(
+	            $wp_customize,
+	            'revive_cpw',
+	            array(
+	                'label' => __('How to Create a Beautiful Contact us Page?','revive'),
+	                'description' => __('To do so, go to your Dashboard - Pages - Add New. <br/> 
+		            In the Add New Page, Give the Page a title and add some content to it if you want to. And then Set the template of the page to <strong>Contact Us</strong> from <b>Default Template</b>. <br/><br/>
+		            Once you have done so, open the contact us page in your browser and click on Customize from the Admin Bar. Once you are in the Customizer you can Comeback to this section and finish designing your custom page.','revive'),
+	                'section' => 'revive_custom_page_section',
+	                'settings' => 'revive_cpw',
+	            )
+	        )
+	    );
+	}
 
 
     //Page Title Enable/Disable
@@ -64,8 +59,8 @@ function revive_customize_register_static_page($wp_customize) {
         array(
             'setting' => 'revive_form_shortcode_set',
             'section' => 'revive_custom_page_section',
-            'label' => __('Shortccode', 'revive'),
-            'description' => __('Paste form shortcode here to display form.', 'revive'),
+            'label' => __('Shortcode', 'revive'),
+            'description' => __('Paste Embed Code/Shortcode here to display form.', 'revive'),
             'type' => 'textarea',
         )
     );
@@ -169,7 +164,7 @@ function revive_customize_register_static_page($wp_customize) {
             'setting' => 'revive_button_url',
             'section' => 'revive_custom_page_section',
             'label' => __('Button URL', 'revive'),
-            'description' => __('Enter button URL with: http://', 'revive'),
+            'description' => __('Enter button URL with http://', 'revive'),
             'type' => 'url',
         )
     );

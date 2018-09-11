@@ -155,4 +155,7 @@ jQuery(document).ready(function() {
 	
 	AccordionToggle();
 	
+	
+	// Customizer Notification for WPForms
+	jQuery('body').find('#accordion-section-themes').after('<div class="wpforms-notice"><p><i>Install and activate the <b>WPForms Lite</b> plugin to enable the <b>Contact Us</b> Section of the Customizer. </i></p></div>');
 });

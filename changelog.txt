@@ -108,3 +108,8 @@ Version 1.2.1
 
 	i) Improved Slider Functionality
 	ii) Added ShareASale ID and WPForms notification
+
+Version 1.2.2
+
+	i) Fixed Logo Overlap issue
+	ii) Fixed Contact Form Customizer Bugs

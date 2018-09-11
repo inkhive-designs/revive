@@ -8,12 +8,11 @@ $wp_customize->add_section('revive_social_section', array(
 
 $social_networks = array( //Redefinied in Sanitization Function.
     'none' => __('-','revive'),
-    'facebook' => __('Facebook','revive'),
+    'facebook-f' => __('Facebook','revive'),
     'twitter' => __('Twitter','revive'),
-    'google-plus' => __('Google Plus','revive'),
+    'google-plus-g' => __('Google Plus','revive'),
     'instagram' => __('Instagram','revive'),
-    'vine' => __('Vine','revive'),
-    'vimeo-square' => __('Vimeo','revive'),
+    'vimeo-v' => __('Vimeo','revive'),
     'youtube' => __('Youtube','revive'),
     'flickr' => __('Flickr','revive'),
 );
@@ -75,7 +74,7 @@ $social_networks = array( //Redefinied in Sanitization Function.
 
 $social_count = count($social_networks);
 
-for ($x = 1 ; $x <= ($social_count - 3) ; $x++) :
+for ($x = 1 ; $x <= ($social_count - 2) ; $x++) :
 
     $wp_customize->add_setting(
         'revive_social_'.$x, array(
@@ -110,13 +109,11 @@ endfor;
 function revive_sanitize_social( $input ) {
     $social_networks = array(
         'none' ,
-        'facebook',
+        'facebook-f',
         'twitter',
-        'google-plus',
+        'google-plus-g',
         'instagram',
-        'rss',
-        'vine',
-        'vimeo-square',
+        'vimeo-v',
         'youtube',
         'flickr'
     );

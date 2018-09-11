@@ -40,8 +40,8 @@ $wp_customize->add_control(
         'type' => 'range',
         'active_callback' => 'revive_logo_enabled',
         'input_attrs' => array(
-            'min'   => 30,
-            'max'   => 200,
+            'min'   => 100,
+            'max'   => 350,
             'step'  => 5,
         ),
     )
@@ -165,7 +165,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'revive_branding_below_logo', array(
         'settings' => 'revive_branding_below_logo',
-        'label'    => __( 'Display Site Title and Tagline Below the Logo.', 'revive' ),
+        'label'    => __( 'Display Title and Tagline Below Logo.', 'revive' ),
+        'description'	=> __('NOTE: Irrespective of the settings, Site Title will display below the logo for mobile screens for large logo sizes', 'revive'),
         'section'  => 'title_tagline',
         'type'     => 'checkbox',
         'active_callback' => 'revive_title_visible'

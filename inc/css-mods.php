@@ -57,8 +57,8 @@ function revive_custom_css_mods() {
 	endif;
 	
 	if ( get_theme_mod('revive_logo_resize') ) :
-		$val = esc_html(get_theme_mod('revive_logo_resize')/100);
-		echo "#masthead #site-logo img { transform: scale(".esc_html($val)."); -webkit-transform: scale(".esc_html($val)."); -moz-transform: scale(".esc_html($val)."); -ms-transform: scale(".esc_html($val)."); }";
+		$val = esc_html(get_theme_mod('revive_logo_resize'));
+		echo "#masthead #site-logo img, #masthead #site-logo {width:" . $val . "px;}";
 		endif;
 
     // page & post fontsize

@@ -69,10 +69,10 @@ jQuery(window).load(function() {
 jQuery( document ).scroll(function() {
     var y = jQuery(this).scrollTop();
     if (y > 700) {
-        jQuery('#social-icons-sticky').show();
+        jQuery('#social-icons-sticky').fadeIn(200);
 	 }
     else {
-        jQuery('#social-icons-sticky').hide();
+        jQuery('#social-icons-sticky').fadeOut(200);
     }
 });
 
