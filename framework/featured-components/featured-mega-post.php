@@ -1,4 +1,4 @@
-<?php if ( get_theme_mod('revive_fposts_slider_enable') && is_front_page() ) : ?>
+<?php if ( get_theme_mod('revive_fm_post_enable') && is_front_page() ) : ?>
 	<div id="featured-mega-post">
 	    <div id="fm-title" class="section-title title-font">
 	        <div class="container">

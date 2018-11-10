@@ -113,3 +113,8 @@ Version 1.2.2
 
 	i) Fixed Logo Overlap issue
 	ii) Fixed Contact Form Customizer Bugs
+
+Version 1.2.3
+
+	i) Mega Post Enable Disable Button Fixed
+	ii) Slider Description CSS Issue Fixed
